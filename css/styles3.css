@@ -1,0 +1,106 @@
+.juego3-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 1rem;
+  background: var(--color-bg);
+  min-height: 80vh;
+}
+
+.juego-caja {
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
+  color: white;
+  padding: 40px 30px;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0,0,0,0.25);
+  backdrop-filter: blur(10px);
+}
+
+.juego-caja h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 4px #000;
+}
+
+.juego-caja input[type="text"] {
+  padding: 10px;
+  width: 80%;
+  border-radius: 10px;
+  border: none;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.juego-caja button {
+  background: #00e676;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.juego-caja button:hover {
+  background: #00c853;
+  transform: scale(1.05);
+}
+
+.pregunta {
+  font-size: 2rem;
+  margin: 2rem 0;
+  font-weight: bold;
+}
+
+.cuadros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.cuadro {
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: #1976d2;
+  transition: transform 0.2s;
+}
+
+.cuadro:hover {
+  transform: scale(1.05);
+}
+
+.cuadro.si { background-color: #43a047; }
+.cuadro.no { background-color: #e53935; }
+.cuadro.azul { background-color: #1e88e5; }
+
+#resultado, #puntaje, #calificacion {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .juego-caja h1 {
+    font-size: 1.5rem;
+  }
+
+  .cuadro {
+    width: 100%;
+  }
+
+  .pregunta {
+    font-size: 1.5rem;
+  }
+}

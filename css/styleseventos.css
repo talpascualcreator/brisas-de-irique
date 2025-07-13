@@ -1,0 +1,100 @@
+.proximos-eventos {
+  width: 100%;
+  background-color: #f5f7fa;
+}
+
+.eventos-titulo {
+  font-size: 2.5rem;
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #003366;
+  background: linear-gradient(to right, #e0f7fa, #ffffff);
+  border-bottom: 2px solid #0071e3;
+}
+
+.evento {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  margin-bottom: 4rem;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.evento img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(65%);
+  transition: filter 0.4s ease;
+  display: block;
+}
+
+.evento:hover img {
+  filter: brightness(50%);
+}
+
+/* Texto sobre la imagen */
+.evento-texto {
+  position: absolute;
+  bottom: 10%; /* ↓ lo ubicamos más abajo respecto al alto de la imagen */
+  left: 30px;
+  background-color: rgba(0, 113, 227, 0.85);
+  color: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  max-width: 90%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+
+.evento-texto h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.evento-texto p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.evento:hover .evento-texto {
+  transform: translateY(-8px);
+/* Removed duplicate .evento-texto block */
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Responsive móvil */
+/* 🔒 Ocultar texto por defecto en pantallas pequeñas */
+@media (max-width: 768px) {
+  .evento-texto {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(0);
+  }
+
+  .evento.activo .evento-texto {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .evento-texto h3 {
+    font-size: 1.4rem;
+  }
+
+  .evento-texto p {
+    font-size:.6rem;
+  }
+
+  .evento {
+    min-height: auto;
+  }
+
+  .evento img {
+    height: auto;
+  }
+}
+

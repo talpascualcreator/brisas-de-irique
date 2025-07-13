@@ -1,0 +1,69 @@
+.juego2-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 1rem;
+  background: var(--color-bg);
+  min-height: 80vh;
+}
+
+.juego-caja {
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
+  color: white;
+  padding: 40px 30px;
+  max-width: 650px;
+  width: 100%;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0,0,0,0.25);
+  backdrop-filter: blur(10px);
+}
+
+.juego-caja h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 5px #000;
+}
+
+.juego-caja input[type=text] {
+  padding: 10px;
+  width: 80%;
+  border-radius: 10px;
+  border: none;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.juego-caja button {
+  background: #00e676;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.juego-caja button:hover {
+  background: #00c853;
+  transform: scale(1.05);
+}
+
+.juego-caja .palabra {
+  font-size: 2rem;
+  margin: 1rem 0;
+  font-weight: bold;
+}
+
+.opciones button {
+  margin: 0.5rem;
+}
+
+#resultado,
+#puntaje,
+#calificacion {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
