@@ -68,6 +68,15 @@
           <li><a href="hay-que-cuidar.html">Hay que cuidar</a></li>
         </ul>
       </li>
+
+      <li>
+  <button class="acordeon-titulo">🎼 Himnos Oficiales</button>
+  <ul class="acordeon-contenido">
+    <li><a href="himno-nacional.html">Himno Nacional de Colombia - ¡Oh, gloria inmarcesible!</a></li>
+    <li><a href="himno-meta.html">Himno del Departamento del Meta - ¡Ay, mi llanura!</a></li>
+    <li><a href="himno-villavicencio.html">Himno de Villavicencio - Villavo la Bella</a></li>
+  </ul>
+</li>
     </ul>
   </div>
 </div>
@@ -91,27 +100,39 @@
   
   </header>
  <main>
-  <section class="juego1-wrapper">
-    <div class="juego-caja">
-      <h1 class="main-title">🥄 ¡CUCHARA O TENEDOR! 🍴</h1>
+ <section class="juego1-wrapper">
+  <div class="juego-caja">
+    <h1 class="main-title">🥄 ¡CUCHARA O TENEDOR! 🍴</h1>
 
-      <div id="inicio" class="inicio">
-        <label for="nombre">🎮 Ingresa tu nombre:</label><br>
-        <input type="text" id="nombre" placeholder="Jugador estrella">
-        <button onclick="iniciarJuego()">Comenzar</button>
-      </div>
-
-      <div id="juego" style="display:none;">
-        <h2 id="jugador" class="jugador">Jugador</h2>
-        <div id="word" class="word">CUCHARA O TENEDOR</div>
-        <canvas id="gameCanvas" width="400" height="200"></canvas>
-        <p class="instruction">Presiona <strong>1</strong> si es CUCHARA (de pie) o <strong>2</strong> si es TENEDOR (sentado)</p>
-        <p id="result" class="result"></p>
-        <p id="puntaje" class="puntaje"></p>
-        <p id="calificacion" class="calificacion"></p>
-      </div>
+    <div id="inicio" class="inicio">
+      <label for="nombre">🎮 Ingresa tu nombre:</label><br>
+      <input type="text" id="nombre" placeholder="Jugador estrella">
+      <button onclick="iniciarJuego()">Comenzar</button>
     </div>
-  </section>
+
+    <div id="juego" style="display: none;">
+      <h2 id="jugador" class="jugador">Jugador:</h2>
+      <div id="word" class="word">CUCHARA O TENEDOR</div>
+      <canvas id="gameCanvas" width="400" height="200"></canvas>
+
+      <p class="instruction">
+        Toca el botón correcto según la figura:<br>
+        <strong>🥄 CUCHARA (de pie)</strong> | <strong>🍴 TENEDOR (sentado)</strong>
+      </p>
+
+      <div class="cuadros">
+       <button onclick="verificarRespuesta(1)">🥄 CUCHARA (1)</button>
+       <button onclick="verificarRespuesta(2)">🍴 TENEDOR (2)</button>
+       </div>
+
+      <p id="result"></p>
+      <p id="puntaje"></p>
+      <p id="calificacion"></p>
+    </div>
+  </div>
+</section>
+
+
 </main>
 
  

@@ -2,7 +2,7 @@ const words = ["CUCHARA", "TENEDOR"];
 let expectedKey = null;
 let aciertos = 0;
 let nombreJugador = "";
-let velocidad = 5000; // tiempo inicial para responder (ms)
+let velocidad = 5000;
 let timeoutID = null;
 
 const wordDiv = document.getElementById("word");
@@ -13,7 +13,6 @@ const puntajeDiv = document.getElementById("puntaje");
 const calificacionDiv = document.getElementById("calificacion");
 const jugadorDiv = document.getElementById("jugador");
 
-// Comienza el juego después de ingresar nombre
 function iniciarJuego() {
   const input = document.getElementById("nombre");
   nombreJugador = input.value.trim();
@@ -26,16 +25,13 @@ function iniciarJuego() {
   document.getElementById("inicio").style.display = "none";
   document.getElementById("juego").style.display = "block";
   jugadorDiv.textContent = `Jugador: ${nombreJugador}`;
-
   aciertos = 0;
   velocidad = 5000;
   puntajeDiv.textContent = "Puntaje: 0";
   calificacionDiv.textContent = "";
-
   nextWord();
 }
 
-// Dibuja línea
 function drawLine(type, color) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.strokeStyle = color;
@@ -51,33 +47,45 @@ function drawLine(type, color) {
   ctx.stroke();
 }
 
-// Nueva ronda
 function nextWord() {
   result.textContent = "";
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   const palabra = words[Math.floor(Math.random() * words.length)];
   wordDiv.textContent = palabra;
-  expectedKey = palabra === "CUCHARA" ? "1" : "2";
+  expectedKey = palabra === "CUCHARA" ? 1 : 2;
 
   clearTimeout(timeoutID);
   timeoutID = setTimeout(() => {
-    if (expectedKey) {
+    if (expectedKey !== null) {
       result.textContent = "¡Muy lento! Descalificado.";
       mostrarCalificacion();
     }
   }, velocidad);
 }
 
-// Reinicio tras error
-function reiniciarJuego() {
-  setTimeout(() => {
-    aciertos = 0;
-    velocidad = 5000;
-    puntajeDiv.textContent = "Puntaje: 0";
-    calificacionDiv.textContent = "";
-    nextWord();
-  }, 3000);
+function verificarRespuesta(num) {
+  if (expectedKey === null) return;
+
+  const correcto = num === expectedKey;
+  drawLine(num, correcto ? "green" : "red");
+
+  if (correcto) {
+    aciertos++;
+    puntajeDiv.textContent = `Puntaje: ${aciertos}`;
+    expectedKey = null;
+
+    if (aciertos % 3 === 0 && velocidad > 2000) {
+      velocidad -= 300;
+    }
+
+    result.textContent = "✅ ¡Correcto!";
+    setTimeout(nextWord, 1500);
+  } else {
+    result.textContent = "❌ ¡Incorrecto!";
+    expectedKey = null;
+    mostrarCalificacion();
+  }
 }
 
 function mostrarCalificacion() {
@@ -90,7 +98,6 @@ function mostrarCalificacion() {
 
   calificacionDiv.textContent = `Calificación: ${nota}`;
 
-  // Pregunta si desea jugar de nuevo
   setTimeout(() => {
     const deseaReiniciar = confirm("❌ Perdiste. ¿Quieres comenzar de nuevo?");
     if (deseaReiniciar) {
@@ -105,30 +112,13 @@ function mostrarCalificacion() {
   }, 1000);
 }
 
-// Capturar teclado
 document.addEventListener("keydown", (e) => {
-  if (!expectedKey) return;
+  if (expectedKey === null) return;
 
   if (e.key === "1" || e.key === "2") {
-    const correcto = e.key === expectedKey;
-    drawLine(parseInt(e.key), correcto ? "green" : "red");
-
-    if (correcto) {
-      aciertos++;
-      puntajeDiv.textContent = `Puntaje: ${aciertos}`;
-      expectedKey = null;
-
-      // Disminuir tiempo si va acertando
-      if (aciertos % 3 === 0 && velocidad > 2000) {
-        velocidad -= 300; // se vuelve más rápido
-      }
-
-      result.textContent = "¡Correcto!";
-      setTimeout(nextWord, 1500);
-    } else {
-      result.textContent = "¡Descalificado!";
-      expectedKey = null;
-      mostrarCalificacion();
-    }
+    verificarRespuesta(Number(e.key));
   }
 });
+
+
+
