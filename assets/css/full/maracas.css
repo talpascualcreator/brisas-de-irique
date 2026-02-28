@@ -1,0 +1,46 @@
+/* Full Maracas Style */
+.maracas-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 2rem;
+}
+
+.maraca {
+    position: relative;
+    width: 100px;
+    height: 220px;
+    cursor: pointer;
+    transform-origin: bottom center;
+    transition: transform 0.1s;
+}
+
+.maraca__handle {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 100px;
+    background: #78350f;
+    border-radius: 10px;
+}
+
+.maraca__body {
+    position: absolute;
+    top: 10px;
+    width: 100px;
+    height: 120px;
+    background: radial-gradient(circle at 30% 30%, #ef4444, #b91c1c);
+    border-radius: 50% 50% 40% 40%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.maraca.shake-left {
+    transform: rotate(-15deg);
+}
+
+.maraca.shake-right {
+    transform: rotate(15deg);
+}

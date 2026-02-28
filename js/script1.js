@@ -8,7 +8,7 @@ let timeoutID = null;
 const wordDiv = document.getElementById("word");
 const result = document.getElementById("result");
 const canvas = document.getElementById("gameCanvas");
-const ctx = canvas.getContext("2d");
+const ctx = canvas ? canvas.getContext("2d") : null;
 const puntajeDiv = document.getElementById("puntaje");
 const calificacionDiv = document.getElementById("calificacion");
 const jugadorDiv = document.getElementById("jugador");
@@ -55,6 +55,10 @@ function nextWord() {
   wordDiv.textContent = palabra;
   expectedKey = palabra === "CUCHARA" ? 1 : 2;
 
+  // Dibujar la figura inmediatamente para que el usuario pueda verla
+  console.log("Drawing figure for:", palabra, "type:", expectedKey);
+  drawLine(expectedKey, "black");
+
   clearTimeout(timeoutID);
   timeoutID = setTimeout(() => {
     if (expectedKey !== null) {
@@ -68,7 +72,7 @@ function verificarRespuesta(num) {
   if (expectedKey === null) return;
 
   const correcto = num === expectedKey;
-  drawLine(num, correcto ? "green" : "red");
+  drawLine(expectedKey, correcto ? "#00e676" : "#ff5252");
 
   if (correcto) {
     aciertos++;

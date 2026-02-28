@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instrumentos Virtuales - I.E. Brisas de Iriqué</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="assets/css/instrumentos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="branding">
+                <img src="img/escudo.png" alt="Escudo Brisas de Iriqué" class="logo" />
+                <div class="title">
+                    <h1>Institución Educativa</h1>
+                    <h2>Brisas de Iriqué</h2>
+                </div>
+            </div>
+            <nav class="navbar">
+                <a href="index.html">Inicio</a>
+                <a href="instrumentos-virtuales.html">Instrumentos Virtuales</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Música ▾</button>
+                    <div class="dropdown-content musica-dropdown">
+                        <ul class="musica-lista">
+                            <li>
+                                <button class="acordeon-titulo">🎵 Canciones de apoyo</button>
+                                <ul class="acordeon-contenido">
+                                    <li><a href="ayepo.html">Ayepo</a></li>
+                                    <li><a href="san-roque-bendito.html">San Roque Bendito</a></li>
+                                    <li><a href="hoy-traigo-una-cancion.html">Hoy traigo una canción</a></li>
+                                    <li><a href="el-sapo-no-se-lava-el-pie.html">El sapo no se lava el pie</a></li>
+                                    <li><a href="echele-leche-al-cafe.html">Échele leche al café</a></li>
+                                    <li><a href="en-la-tienda-del-maestro-andres.html">En la tienda del maestro
+                                            Andrés</a></li>
+                                    <li><a href="los-cacharros.html">Los cacharros</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <button class="acordeon-titulo">🎓 Repertorio Preescolar</button>
+                                <ul class="acordeon-contenido">
+                                    <li><a href="el-lobo-come-gallinas.html">El lobo come gallinas</a></li>
+                                    <li><a href="la-pina-madura.html">La piña madura</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <button class="acordeon-titulo">📘 Repertorio Primero</button>
+                                <ul class="acordeon-contenido">
+                                    <li><a href="el-pescador.html">El pescador</a></li>
+                                    <li><a href="cumbia-caribena.html">Cumbia caribeña</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <button class="acordeon-titulo">📗 Repertorio Segundo</button>
+                                <ul class="acordeon-contenido">
+                                    <li><a href="el-yerberito-moderno.html">El yerberito moderno</a></li>
+                                    <li><a href="pario-la-luna.html">Parió la luna</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <button class="acordeon-titulo">📙 Repertorio Tercero</button>
+                                <ul class="acordeon-contenido">
+                                    <li><a href="estan-cayendo-goticas.html">Están cayendo goticas</a></li>
+                                    <li><a href="hay-que-cuidar.html">Hay que cuidar</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <button class="acordeon-titulo">🎼 Himnos Oficiales</button>
+                                <ul class="acordeon-contenido">
+                                    <li><a href="himno-nacional.html">Himno Nacional de Colombia - ¡Oh, gloria
+                                            inmarcesible!</a></li>
+                                    <li><a href="himno-meta.html">Himno del Departamento del Meta - ¡Ay, mi llanura!</a>
+                                    </li>
+                                    <li><a href="himno-villavicencio.html">Himno de Villavicencio - Villavo la Bella</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropbtn">Juegos ▾</button>
+                    <div class="dropdown-content">
+                        <a href="juego1.html">Cuchara y tenedor</a>
+                        <a href="juego2.html">Palabra y números</a>
+                        <a href="juego3.html">El sí y el no</a>
+                        <a href="juego4.html">Elige el que no es</a>
+                    </div>
+                </div>
+
+                <a href="eventos.html">Próximos Eventos</a>
+                <a href="convivencia.html">Manual de Convivencia</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-intro">
+            <h1>Instrumentos Virtuales</h1>
+            <p>
+                Explora y experimenta con los sonidos tradicionales de nuestra banda.
+                Esta herramienta pedagógica te permite conocer la sonoridad de la Lira,
+                la Tambora y las Maracas de una forma interactiva y didáctica.
+            </p>
+        </section>
+
+        <div class="instrument-grid">
+            <!-- Lira Card -->
+            <article class="instrument-card" id="card-lira">
+                <div class="instrument-card__icon">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="25" y="20" width="10" height="60" rx="2" fill="#cbd5e1" />
+                        <rect x="40" y="25" width="10" height="50" rx="2" fill="#f1f5f9" />
+                        <rect x="55" y="15" width="10" height="70" rx="2" fill="#cbd5e1" />
+                        <rect x="70" y="30" width="10" height="40" rx="2" fill="#94a3b8" />
+                        <path d="M20 75H80M20 25H80" stroke="#0071e3" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <h3 class="instrument-card__title">Lira Virtual</h3>
+                <p class="instrument-card__description">
+                    Instrumento de percusión melódica con un sonido brillante y metálico.
+                    Presiona el botón para escuchar un arpegio.
+                </p>
+                <a href="tocar-instrumento.html?tipo=lira" class="instrument-card__btn">Tocar</a>
+            </article>
+
+            <!-- Tambora Card -->
+            <article class="instrument-card" id="card-tambora">
+                <div class="instrument-card__icon">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="40" fill="#7c2d12" stroke="#451a03" stroke-width="4" />
+                        <circle cx="50" cy="50" r="35" fill="#fed7aa" stroke="#fb923c" stroke-width="2" />
+                    </svg>
+                </div>
+                <h3 class="instrument-card__title">Tambora Virtual</h3>
+                <p class="instrument-card__description">
+                    El corazón rítmico de nuestra música. Alterna entre golpes en el centro y en el aro.
+                </p>
+                <a href="tocar-instrumento.html?tipo=tambora" class="instrument-card__btn">Tocar</a>
+            </article>
+
+            <!-- Maracas Card -->
+            <article class="instrument-card" id="card-maracas">
+                <div class="instrument-card__icon">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="35" cy="40" r="20" fill="#facc15" stroke="#a16207" stroke-width="2" />
+                        <rect x="32" y="60" width="6" height="30" rx="3" fill="#854d0e" />
+                        <circle cx="70" cy="35" r="18" fill="#eab308" stroke="#a16207" stroke-width="2" />
+                    </svg>
+                </div>
+                <h3 class="instrument-card__title">Maracas Virtuales</h3>
+                <p class="instrument-card__description">
+                    Aportan brillo y textura rítmica. Siente el latido de las semillas en cada golpe.
+                </p>
+                <a href="tocar-instrumento.html?tipo=maracas" class="instrument-card__btn">Tocar</a>
+            </article>
+        </div>
+
+        <div class="volume-control">
+            <label for="volume-slider">Volumen General</label>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.6">
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 - Brisas de Iriqué | Proyecto Musical y Pedagógico</p>
+    </footer>
+
+    <script type="module" src="assets/js/instrumentos/main.js"></script>
+</body>
+
+</html>

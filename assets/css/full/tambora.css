@@ -1,0 +1,39 @@
+/* Full Tambora Style */
+.tambora {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #fef3c7, #d97706);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), inset 0 0 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.1s;
+    margin: 2rem auto;
+}
+
+.tambora::before {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    border-radius: 50%;
+    border: 20px solid #451a03;
+    z-index: 1;
+}
+
+.tambora__zone--center {
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.tambora.hit-center {
+    transform: scale(0.97);
+}
+
+.tambora.hit-rim::before {
+    filter: brightness(1.2);
+}
